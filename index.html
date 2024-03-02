@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Software Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="AboutPageAssets/styles/portfolio.css" rel="stylesheet" type="text/css">
+    <style>
+        /* Add any additional styles if needed */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styles for the lightbox overlay */
+        #myModal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Styles for the lightbox content */
+		.modal-content {
+			position: relative;
+			margin: auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+			color: white; /* Add this line to set text color to white */
+		}
+
+		/* Styles for the close button within the lightbox content */
+		.close {
+			position: fixed;
+			top: 15px;
+			right: 15px;
+			color: white;
+			font-size: 30px;
+			font-weight: bold;
+			cursor: pointer;
+			z-index: 2;
+		}
+
+        /* Add any additional lightbox styles if needed */
+		/* Thumbnail image controls */
+		.column {
+			width: 20%; /* Adjust the width as needed */
+			float: left;
+			box-sizing: border-box;
+			padding: 0 10px;
+		}
+
+		/* Ensure the columns don't exceed one row */
+		.row::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+		
+		/* Styles for the text in the lightbox */
+		.numbertext, .caption-container {
+			color: white; /* Set text color to white */
+			text-align: center; /* Center the text */
+		}
+		#about{
+			text-align: center;
+		}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Name</h1>
+        <p>Software Developer</p>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="images/headshot.jpg" alt="Your Name - Headshot" style="width: 200px; height: auto; border-radius: 50%; margin-bottom: 20px;">
+        <p>
+            Welcome to my portfolio! I am a passionate software developer with expertise in [your programming languages and technologies]. I enjoy tackling challenging problems and building innovative solutions.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming Languages: [List your programming languages]</li>
+            <li>Web Technologies: [List your web technologies]</li>
+            <li>Frameworks: [List your frameworks]</li>
+            <li>Database Systems: [List your databases]</li>
+            <!-- Add more skills as needed -->
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <!-- VR Video -->
+        <section class="section3">
+            <article class="section2Content">
+                <h3 class="sectionContentSubTitle">Virtual Reality Team Tracker. Made for UNCC VisLab.</h3>
+            </article>
+        </section>
+
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/Ij16HLPgvjE"></iframe>
+
+        <!-- AR Lightbox Images -->
+        <section class="section3">
+            <article class="section2Content">
+                <h3 class="sectionContentSubTitle">Augmented Reality CPR Guide/Trainer for Microsoft Hololens. Made for UNCC VisLab.</h3>
+            </article>
+        </section>
+
+        <!-- Lightbox Thumbnail -->
+        <div class="row">
+            <div class="column">
+                <img src="images/screenshot5.png" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:120%">
+            </div>
+        </div>
+
+        <!-- VR Video 2 -->
+        <section class="section3">
+            <article class="section2Content">
+                <h3 class="sectionContentSubTitle">Virtual Reality Solar System for the Valve Index. Made for ITCS 6125 - Virtual & Augmented Reality</h3>
+            </article>
+        </section>
+
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/Sky0Cmaqzcg"></iframe>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+    <h2>Contact</h2>
+    <p>
+        Feel free to reach out to me via email or find me on social media.
+    </p>
+
+    <!-- Images that can be clicked on -->
+    <a href="mailto:patkins789@gmail.com">
+        <img src="images/email_icon.png" alt="Email Icon" style="width: 50px; height: 50px; margin-right: 10px;">
+    </a>
+
+    <a href="https://www.linkedin.com/in/paul-atkins-300667104/" target="_blank">
+        <img src="images/linkedin_icon.png" alt="LinkedIn Icon" style="width: 50px; height: 50px;">
+    </a>
+	<a href="https://github.com/patkins2" target="_blank">
+        <img src="images/github_icon.png" alt="Github Icon" style="width: 50px; height: 50px;">
+    </a>
+</section>
+
+    <!-- The Modal/Lightbox -->
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <!-- Lightbox Images -->
+            <div class="mySlides">
+                <div class="numbertext">1 / 5</div>
+                <img src="images/screenshot1.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 5</div>
+                <img src="images/screenshot2.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 5</div>
+                <img src="images/screenshot3.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 5</div>
+                <img src="images/screenshot4.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 5</div>
+                <img src="images/screenshot5.png" style="width:100%">
+            </div>
+
+            <!-- Next/previous controls -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- Caption text -->
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <!-- Thumbnail image controls -->
+            <div class="column">
+                <img class="demo" src="images/screenshot1.png" onclick="currentSlide(1)" alt="Start Page" style="width:100%">
+            </div>
+
+            <div class="column">
+                <img class="demo" src="images/screenshot2.png" onclick="currentSlide(2)" alt="Questions or Tasks are presented to the user" style="width:100%">
+            </div>
+
+            <div class="column">
+                <img class="demo" src="images/screenshot3.png" onclick="currentSlide(3)" alt="Users can click next, the checkbox in the center, or use voice commands to navigate through the pages." style="width:100%">
+            </div>
+
+            <div class="column">
+                <img class="demo" src="images/screenshot4.png" onclick="currentSlide(4)" alt="The amount of time it takes a user to complete a cycle with be displayed in seconds." style="width:100%">
+            </div>
+
+            <div class="column">
+                <img class="demo" src="images/screenshot5.png" onclick="currentSlide(5)" alt="Avatar is superimposed on the real world to help with training." style="width:100%">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript functions for the lightbox -->
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+</body>
+</html>
