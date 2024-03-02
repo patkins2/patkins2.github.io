@@ -4,26 +4,34 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #007BFF;
+    color: white;
     text-align: center;
     padding: 1em;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
 }
 
 section {
     padding: 20px;
     margin: 20px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
     border-radius: 5px;
 }
 
-h1, h2, h3 {
+h1{
+	text-decoration: underline;
+}
+
+h2, h3 {
     color: #333;
+    text-decoration: underline;
 }
 
 ul {
@@ -32,7 +40,7 @@ ul {
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 8px; /* Adjusted margin for consistency */
 }
 
 a {
@@ -45,14 +53,162 @@ a:hover {
     color: #0056b3;
 }
 
-/* Add a subtle hover effect for sections */
+/* Add a subtle hover effect for sections 
 section:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
+}*/
 
 /* Media query for responsiveness */
 @media (max-width: 768px) {
     header {
         font-size: 1.5em;
     }
+}
+
+/* Styles for the lightbox overlay */
+#myModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Styles for the lightbox content */
+.modal-content {
+    position: relative;
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    color: white; /* Set text color to white */
+}
+
+/* Styles for the close button within the lightbox content */
+.close {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Thumbnail image controls */
+.column {
+    width: 20%; /* Adjust the width as needed */
+    float: left;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+/* Ensure the columns don't exceed one row */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Styles for the text in the lightbox */
+.numbertext, .caption-container {
+    color: white; /* Set text color to white */
+    text-align: center; /* Center the text */
+}
+
+/* Additional styles for the 'About' section */
+#about {
+    text-align: center;
+    margin-bottom: 20px; /* Add margin to separate from other sections */
+}
+/* Styles for the next and previous controls */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+
+/* Style for the previous control */
+.prev {
+    left: 0;
+}
+
+/* Style for the next control */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+    gap: 20px; /* Adjust the gap between projects */
+}
+
+.project-item {
+    width: calc(33.33% - 20px); /* Adjust the width as needed */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+/* Add this CSS for the animation */
+.wiggle:hover {
+    animation: wiggleAnimation 0.5s ease-in-out infinite;
+}
+
+@keyframes wiggleAnimation {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.tooltip a {
+    cursor: pointer;
 }
