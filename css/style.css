@@ -212,3 +212,24 @@ section:hover {
 .tooltip a {
     cursor: pointer;
 }
+.cta-arrow {
+    position: absolute;
+    top: 50%;
+    left: -20px; /* Adjust the distance from the left of the headshot */
+    transform: translateY(-50%) rotate(180deg);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 15px solid #007BFF; /* Arrow color */
+    cursor: pointer;
+	animation: moveArrow 1s infinite alternate;
+}
+@keyframes moveArrow {
+	from {
+        left: -40px;
+    }
+    to {
+        left: -20px; /* Adjust the distance for the alternate position */
+    }
+}
