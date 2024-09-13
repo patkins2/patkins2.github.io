@@ -36,5 +36,5 @@ function showSlides(n) {
 }
 
 function openResume() {
-        window.open("Paul Atkins Resume.pdf", "_blank");
+        window.open("PaulAtkinsResume_0724.pdf", "_blank");
 }
