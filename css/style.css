@@ -58,10 +58,109 @@ section:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }*/
 
+/* Make project images and videos consistent size */
+.section3 iframe {
+    width: 420px;
+    height: 315px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    border: 1px solid #eee; /* Subtle border */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.section3 img:not(.project-thumbnail) {
+    width: 420px;
+    height: 315px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    border: 1px solid #eee; /* Subtle border */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.section3 iframe:hover, .section3 img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Project container styling */
+.section2Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure full width */
+}
+
+.section3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px; /* Add padding to increase spacing */
+}
+
+/* Add responsive styling for lightbox images */
+.mySlides img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh; /* Limit height on larger screens */
+    object-fit: contain;
+}
+
 /* Media query for responsiveness */
+@media (max-width: 1399px) {
+    /* 3 columns down to 2 columns when width is less than 1400px */
+    .project-grid {
+        grid-template-columns: repeat(2, 420px);
+        max-width: 940px; /* Adjust max width for 2 columns (420px * 2) + gap (50px) */
+    }
+}
+
+@media (max-width: 939px) {
+    /* 2 columns down to 1 column when width is less than 940px */
+    .project-grid {
+        grid-template-columns: repeat(1, 420px);
+        max-width: 420px; /* Just enough for one column */
+    }
+}
+
 @media (max-width: 768px) {
     header {
         font-size: 1.5em;
+    }
+
+    /* For very small screens, allow the projects to scale down slightly but maintain aspect ratio */
+    .section3 {
+        width: 100%;
+        max-width: 420px;
+    }
+    
+    .section3 iframe, .section3 img {
+        width: 100%;
+        height: auto;
+        min-height: 240px; /* Maintain some minimum height */
+    }
+    
+    /* Improve lightbox responsiveness on mobile */
+    #myModal {
+        padding-top: 20px;
+    }
+    
+    .modal-content {
+        width: 95%;
+    }
+    
+    .column {
+        width: 33.33%; /* Make thumbnails larger on mobile */
+    }
+    
+    .prev, .next {
+        padding: 8px;
+        font-size: 16px;
+    }
+    
+    .close {
+        top: 10px;
+        right: 10px;
     }
 }
 
@@ -85,8 +184,8 @@ section:hover {
     position: relative;
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    width: 90%;
+    max-width: 900px;
     color: white; /* Set text color to white */
 }
 
@@ -108,6 +207,7 @@ section:hover {
     float: left;
     box-sizing: border-box;
     padding: 0 10px;
+    margin-bottom: 15px;
 }
 
 /* Ensure the columns don't exceed one row */
@@ -117,10 +217,43 @@ section:hover {
     display: table;
 }
 
+/* Style for the thumbnails */
+.demo {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.demo.active, .demo:hover {
+    opacity: 1;
+}
+
 /* Styles for the text in the lightbox */
 .numbertext, .caption-container {
     color: white; /* Set text color to white */
     text-align: center; /* Center the text */
+    padding: 10px 0;
+    background-color: rgba(0,0,0,0.6);
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Section thumbnails */
+.project-thumbnail {
+    width: 420px;
+    height: 315px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid #eee; /* Subtle border */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Make sure all section content is properly sized */
+.sectionContentSubTitle {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px; /* Increased margin */
+    min-height: 50px; /* Ensure consistent height for titles */
 }
 
 /* Additional styles for the 'About' section */
@@ -141,6 +274,7 @@ section:hover {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     cursor: pointer;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
 }
 
 /* Style for the previous control */
@@ -153,16 +287,23 @@ section:hover {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
+
+/* Hover effect for prev and next buttons */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
-    gap: 20px; /* Adjust the gap between projects */
+    grid-template-columns: repeat(3, 420px); /* Exactly 3 columns of 420px each */
+    justify-content: center; /* Center the grid in the container */
+    gap: 50px; /* Increased space between project items */
+    margin: 0 auto; /* Center the grid container itself */
+    max-width: 1410px; /* Maximum width to accommodate 3 columns (420px * 3) + gaps (50px * 2) */
 }
 
-.project-item {
-    width: calc(33.33% - 20px); /* Adjust the width as needed */
-    margin-bottom: 20px;
-    box-sizing: border-box;
+.section3 {
+    width: 420px; /* Fixed width */
+    margin-bottom: 40px; /* Increased bottom margin */
 }
 /* Add this CSS for the animation */
 .wiggle:hover {
