@@ -15,10 +15,24 @@ export const aboutText = `Welcome to my page! I am a passionate software develop
 export const workExperience = [
   {
     id: 1,
+    title: "CSS Support Engineer",
+    company: "Palantir",
+    location: "Remote",
+    dates: "September 2025 - Present",
+    description: [
+      "Contract via Prime Technical Services Inc.",
+      "Diagnosed and resolved user issues related to data setup, pipeline configuration, and data processing within the Foundry platform to ensure the success of Palantir clients in terms of integration, engagement, and impact.",
+      "Partnered closely with cross-functional teams to manage a portfolio of enterprise level customer accounts, helping customers to achieve their business goals and get the most value from the Palantir products they purchased throughout the lifecycle of their contract.",
+      "Ensured the success of Palantir clients in terms of integration, engagement, and impact by collaborating with developers to identify and address data-related bottlenecks and improve the overall functionality of Foundry applications.",
+      "Provided technical guidance to users on utilizing Foundry applications (Workshop, Quiver, Slate, Code Workbooks, Pipeline Builder, and Contour) to manipulate and transform data for their desired outcomes."
+    ]
+  },
+  {
+    id: 2,
     title: "Lead Software Engineer",
     company: "TrackLab",
     location: "Charlotte, NC",
-    dates: "Mar 2024 - Present",
+    dates: "March 2024 - Present",
     description: [
       "Designed and developed a real-time race tracking and strategy web application leveraging HTML/CSS/JS for the frontend and Go ETL for the backend, connecting to MongoDB.",
       "Engineered RESTful APIs to fetch and display race statistics, lap times, and driver performance.",
@@ -29,49 +43,42 @@ export const workExperience = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     title: "Software Developer",
     company: "General Motors",
     location: "Austin, TX",
-    dates: "Sept 2021 - Feb 2024",
+    dates: "September 2021 - Feburary 2024",
     description: [
-      "Worked on CVI Insourcing project involving pulling from large databases and creating Power BI reports and Python scripts for data analysis",
-      "Transitioned to Full Stack Pyspark ETL Developer",
-      "Created & maintained CI/CD Automation & Release ETL Pipelines",
-      "Populated/managed team's Hive/Hadoop/Greenplum datasets",
-      "Coordinated with the Cloud team on transitioning from on-prem TFS pipelines to Azure DevOps",
-      "Maintained team's Git repository, co-led deployments/releases for the project",
-      "Held daily working sessions for project's automation team",
-      "Led Quality Assurance on Power BI reports for newly formed team"
+      "Designed, implemented, and maintained custom ETL processes using Python (PySpark) and SQL to extract, transform, and analyze large structured and semi-structured datasets in Hive, Hadoop, and Greenplum environments.",
+      "Built and optimized Power BI reports and Python scripts for data analysis, leading QA to ensure data accuracy and standardized report formatting.",
+      "Developed and maintained CI/CD automation and release pipelines for large-scale data systems, collaborating with Cloud teams to transition on-prem TFS pipelines to Azure DevOps and optimize release management.",
+      "Coordinated with stakeholders to troubleshoot and resolve issues impacting pipeline stability and deployments.",
+      "Conducted code reviews for Python and SQL, ensuring scalable, efficient, and maintainable data solutions.",
+      "Managed the team's Git repository, co-led deployments and release processes, and facilitated daily working sessions with the automation team, contributing to over 50 successful deployments."
     ]
   },
   {
-    id: 3,
+    id: 4,
     title: "Graduate Research Assistant",
     company: "UNC Charlotte",
     location: "Charlotte, NC",
     dates: "June 2019 - May 2020",
     description: [
-      "Worked on gaming and virtual/augmented reality projects for Microsoft HoloLens, HTC Vive, and iPad",
-      "Partnered with the Charlotte Fire Department on AR projects",
-      "Created Augmented Reality CPR Guide/Manual",
-      "Developed Augmented Reality Indoor Team Tracker"
+      "Developed immersive gaming and virtual/augmented reality applications for platforms including Microsoft HoloLens, HTC Vive, and iPad.",
+      "Collaborated with the Charlotte Fire Department on innovative public safety technology initiatives.",
+      "Designed and implemented an Augmented Reality CPR Guide/Manual to support real-time emergency training and response."
     ]
   },
   {
-    id: 4,
+    id: 5,
     title: "College of Computing & Informatics Technology Solutions Office Technician",
     company: "UNC Charlotte",
     location: "Charlotte, NC",
-    dates: "Oct 2017 - April 2019",
+    dates: "October 2017 - April 2019",
     description: [
-      "Lead Technician at IT Help Desk for UNC Charlotte's College of Computing and Informatics",
-      "Lab maintenance and device deployment",
-      "Equipment pickup/delivery/receiving and documentation",
-      "Workstation imaging and client services ticket fulfillment",
-      "Trained new technicians",
-      "Assisted with client incident software/hardware diagnostics and remediation",
-      "Software deployment"
+      "Led IT support for the College of Computing and Informatics, assisting with device deployment, workstation imaging, and troubleshooting hardware/software issues for faculty and staff.",
+      "Coordinated the IT Help Desk team, mentoring new technicians and ensuring smooth operation through task prioritization and incident remediation.",
+      "Managed software deployments, client services ticket fulfillment, and maintained detailed documentation for service operations and IT procedures."
     ]
   }
 ];
