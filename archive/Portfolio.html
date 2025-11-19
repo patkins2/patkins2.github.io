@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Portfolio</title>
+<link href="AboutPageAssets/styles/portfolio.css" rel="stylesheet" type="text/css">
+</head>
+
+<ul>
+  	<li><a href="index.html">Home</a></li>
+  	<li><a href="portfolio.html">Portfolio</a></li>
+	</ul>
+
+<section class="section3"> 
+	<article class="section2Content">
+    <h3 class="sectionContentSubTitle">Here you can find videos or pictures of my past projects that I worked on or created.</h3>
+    </article>
+    </section>
+    
+    <section class="section3"> 
+	<article class="section2Content">
+    <h3 class="sectionContentSubTitle">Virtual Reality Team Tracker. Made for UNCC VisLab.</h3>
+    </article>
+    </section>
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/Ij16HLPgvjE">
+</iframe>
+
+ <section class="section3"> 
+	<article class="section2Content">
+    <h3 class="sectionContentSubTitle">Augmented Reality CPR Guide/Trainer for Microsoft Hololens. Made for UNCC VisLab.</h3>
+    </article>
+    </section>
+
+<!-- Images used to open the lightbox -->
+<div class="row">
+  <div class="column">
+    <img src="screenshot5.png" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:200%">
+  </div>
+</div>
+
+<section class="section3"> 
+	<article class="section2Content">
+    <h3 class="sectionContentSubTitle">Virtual Reality Solar System for the Valve Index. Made for ITCS 6125 - Virtual & Augmented Reality</h3>
+    </article>
+    </section>
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/Sky0Cmaqzcg">
+</iframe>
+
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 5</div>
+      <img src="screenshot1.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 5</div>
+      <img src="screenshot2.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 5</div>
+      <img src="screenshot3.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 5</div>
+      <img src="screenshot4.png" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">5 / 5</div>
+      <img src="screenshot5.png" style="width:100%">
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail image controls -->
+    <div class="column">
+      <img class="demo" src="screenshot1.png" onclick="currentSlide(1)" alt="Start Page" style="width:100%">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="screenshot2.png" onclick="currentSlide(2)" alt="Questions or Tasks are presented to the user" style="width:100%">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="screenshot3.png" onclick="currentSlide(3)" alt="Users can click next, the checkbox in the center, or use voice commands to  navigate through the pages." style="width:100%">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="screenshot4.png" onclick="currentSlide(4)" alt="The amount of time it takes a user to complete a cylce with be displayed in seconds." style="width:100%">
+    </div>
+    <div class="column">
+      <img class="demo" src="screenshot5.png" onclick="currentSlide(5)" alt="Avater is superimposed on the real world to help with training." style="width:100%">
+    </div>
+  </div>
+</div>
+
+
+<body>
+<script>
+// Open the Modal
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+</body>
+
+
+</html>
+ <!-- light box -->

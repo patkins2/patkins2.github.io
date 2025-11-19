@@ -1,0 +1,376 @@
+/* style.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #894fab;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    border-radius: 5px;
+}
+
+h1{
+	text-decoration: underline;
+}
+
+h2, h3 {
+    color: #333;
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px; /* Adjusted margin for consistency */
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Add a subtle hover effect for sections 
+section:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}*/
+
+/* Make project images and videos consistent size */
+.section3 iframe {
+    width: 420px;
+    height: 315px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    border: 1px solid #eee; /* Subtle border */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.section3 img:not(.project-thumbnail) {
+    width: 420px;
+    height: 315px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    border: 1px solid #eee; /* Subtle border */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.section3 iframe:hover, .section3 img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Project container styling */
+.section2Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure full width */
+}
+
+.section3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px; /* Add padding to increase spacing */
+}
+
+/* Add responsive styling for lightbox images */
+.mySlides img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh; /* Limit height on larger screens */
+    object-fit: contain;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 1399px) {
+    /* 3 columns down to 2 columns when width is less than 1400px */
+    .project-grid {
+        grid-template-columns: repeat(2, 420px);
+        max-width: 940px; /* Adjust max width for 2 columns (420px * 2) + gap (50px) */
+    }
+}
+
+@media (max-width: 939px) {
+    /* 2 columns down to 1 column when width is less than 940px */
+    .project-grid {
+        grid-template-columns: repeat(1, 420px);
+        max-width: 420px; /* Just enough for one column */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 1.5em;
+    }
+
+    /* For very small screens, allow the projects to scale down slightly but maintain aspect ratio */
+    .section3 {
+        width: 100%;
+        max-width: 420px;
+    }
+    
+    .section3 iframe, .section3 img {
+        width: 100%;
+        height: auto;
+        min-height: 240px; /* Maintain some minimum height */
+    }
+    
+    /* Improve lightbox responsiveness on mobile */
+    #myModal {
+        padding-top: 20px;
+    }
+    
+    .modal-content {
+        width: 95%;
+    }
+    
+    .column {
+        width: 33.33%; /* Make thumbnails larger on mobile */
+    }
+    
+    .prev, .next {
+        padding: 8px;
+        font-size: 16px;
+    }
+    
+    .close {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Styles for the lightbox overlay */
+#myModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Styles for the lightbox content */
+.modal-content {
+    position: relative;
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 900px;
+    color: white; /* Set text color to white */
+}
+
+/* Styles for the close button within the lightbox content */
+.close {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Thumbnail image controls */
+.column {
+    width: 20%; /* Adjust the width as needed */
+    float: left;
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+/* Ensure the columns don't exceed one row */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Style for the thumbnails */
+.demo {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.demo.active, .demo:hover {
+    opacity: 1;
+}
+
+/* Styles for the text in the lightbox */
+.numbertext, .caption-container {
+    color: white; /* Set text color to white */
+    text-align: center; /* Center the text */
+    padding: 10px 0;
+    background-color: rgba(0,0,0,0.6);
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Section thumbnails */
+.project-thumbnail {
+    width: 420px;
+    height: 315px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid #eee; /* Subtle border */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Make sure all section content is properly sized */
+.sectionContentSubTitle {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px; /* Increased margin */
+    min-height: 50px; /* Ensure consistent height for titles */
+}
+
+/* Additional styles for the 'About' section */
+#about {
+    text-align: center;
+    margin-bottom: 20px; /* Add margin to separate from other sections */
+}
+/* Styles for the next and previous controls */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+}
+
+/* Style for the previous control */
+.prev {
+    left: 0;
+}
+
+/* Style for the next control */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Hover effect for prev and next buttons */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 420px); /* Exactly 3 columns of 420px each */
+    justify-content: center; /* Center the grid in the container */
+    gap: 50px; /* Increased space between project items */
+    margin: 0 auto; /* Center the grid container itself */
+    max-width: 1410px; /* Maximum width to accommodate 3 columns (420px * 3) + gaps (50px * 2) */
+}
+
+.section3 {
+    width: 420px; /* Fixed width */
+    margin-bottom: 40px; /* Increased bottom margin */
+}
+/* Add this CSS for the animation */
+.wiggle:hover {
+    animation: wiggleAnimation 0.5s ease-in-out infinite;
+}
+
+@keyframes wiggleAnimation {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.tooltip a {
+    cursor: pointer;
+}
+.cta-arrow {
+    position: absolute;
+    top: 50%;
+    left: -20px; /* Adjust the distance from the left of the headshot */
+    transform: translateY(-50%) rotate(180deg);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 15px solid #007BFF; /* Arrow color */
+    cursor: pointer;
+	animation: moveArrow 1s infinite alternate;
+}
+@keyframes moveArrow {
+	from {
+        left: -40px;
+    }
+    to {
+        left: -20px; /* Adjust the distance for the alternate position */
+    }
+}
