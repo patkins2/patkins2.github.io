@@ -15,27 +15,64 @@ export const aboutText = `Welcome to my page! I am a passionate software develop
 export const workExperience = [
   {
     id: 1,
+    title: "Lead Software Engineer",
+    company: "TrackLab",
+    location: "Charlotte, NC",
+    dates: "Mar 2024 - Present",
+    description: [
+      "Designed and developed a real-time race tracking and strategy web application leveraging HTML/CSS/JS for the frontend and Go ETL for the backend, connecting to MongoDB.",
+      "Engineered RESTful APIs to fetch and display race statistics, lap times, and driver performance.",
+      "Implemented geolocation-based weather tracking, utilizing OpenStreetMap API and the National Weather Service, API to provide localized weather data.",
+      "Managed authentication and user access, implementing Google OAuth for secure event participation and administrative controls.",
+      "Set up and managed the TrackLab web server, overseeing deployment processes, & server configurations.",
+      "Maintained and structured the team's GitHub repository, enforcing branching strategies, code reviews, and version control best practices to streamline development and collaboration."
+    ]
+  },
+  {
+    id: 2,
     title: "Software Developer",
     company: "General Motors",
     location: "Austin, TX",
     dates: "Sept 2021 - Feb 2024",
-    description: `Worked on CVI Insourcing project involving pulling from large databases and creating Power BI reports and Python scripts for data analysis. Transitioned to Full Stack Pyspark ETL Developer. Created & maintained CI/CD Automation & Release ETL Pipelines, populated/managed team's Hive/Hadoop/Greenplum datasets. Coordinated with the Cloud team on transitioning from on-prem TFS pipelines to Azure DevOps. Maintained team's Git repository, co-led deployments/releases for the project, and held daily working sessions for project's automation team. Led Quality Assurance on Power BI reports for newly formed team.`
+    description: [
+      "Worked on CVI Insourcing project involving pulling from large databases and creating Power BI reports and Python scripts for data analysis",
+      "Transitioned to Full Stack Pyspark ETL Developer",
+      "Created & maintained CI/CD Automation & Release ETL Pipelines",
+      "Populated/managed team's Hive/Hadoop/Greenplum datasets",
+      "Coordinated with the Cloud team on transitioning from on-prem TFS pipelines to Azure DevOps",
+      "Maintained team's Git repository, co-led deployments/releases for the project",
+      "Held daily working sessions for project's automation team",
+      "Led Quality Assurance on Power BI reports for newly formed team"
+    ]
   },
   {
-    id: 2,
+    id: 3,
     title: "Graduate Research Assistant",
     company: "UNC Charlotte",
     location: "Charlotte, NC",
     dates: "June 2019 - May 2020",
-    description: `Worked on gaming and virtual/augmented reality projects for Microsoft HoloLens, HTC Vive, and iPad. Worked on projects in partnership with the Charlotte Fire Department. Created Augmented Reality CPR Guide/Manual, Worked on Augmented Reality Indoor Team Tracker.`
+    description: [
+      "Worked on gaming and virtual/augmented reality projects for Microsoft HoloLens, HTC Vive, and iPad",
+      "Partnered with the Charlotte Fire Department on AR projects",
+      "Created Augmented Reality CPR Guide/Manual",
+      "Developed Augmented Reality Indoor Team Tracker"
+    ]
   },
   {
-    id: 3,
+    id: 4,
     title: "College of Computing & Informatics Technology Solutions Office Technician",
     company: "UNC Charlotte",
     location: "Charlotte, NC",
     dates: "Oct 2017 - April 2019",
-    description: `Lead Technician at IT Help Desk for UNC Charlotte's College and Computing and Informatics faculty and staff. Duties included: Lab maintenance, device deployment, equipment pickup/delivery/receiving, documentation, workstation imaging, client services ticket fulfillment, training new technicians, assist with client incident software/hardware diagnostics and remediation, and software deployment.`
+    description: [
+      "Lead Technician at IT Help Desk for UNC Charlotte's College of Computing and Informatics",
+      "Lab maintenance and device deployment",
+      "Equipment pickup/delivery/receiving and documentation",
+      "Workstation imaging and client services ticket fulfillment",
+      "Trained new technicians",
+      "Assisted with client incident software/hardware diagnostics and remediation",
+      "Software deployment"
+    ]
   }
 ];
 
