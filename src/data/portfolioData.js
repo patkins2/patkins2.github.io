@@ -7,7 +7,7 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/paul-atkins-300667104/",
   github: "https://github.com/patkins2",
   artstation: "https://www.artstation.com/small_napkins",
-  resumeFile: "PaulAtkinsResume_1125.pdf"
+  resumeFile: "PaulAtkinsResume.pdf"
 };
 
 export const aboutText = `Welcome to my page! I am a passionate software developer with expertise in multiple programming languages & tech stacks. I enjoy tackling challenging problems and building innovative solutions.`;
