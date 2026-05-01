@@ -6,7 +6,7 @@ export const personalInfo = {
   email: "patkins789@gmail.com",
   linkedin: "https://www.linkedin.com/in/paul-atkins-300667104/",
   github: "https://github.com/patkins2",
-  artstation: "https://www.artstation.com/small_napkins",
+  artstation: "https://paulatkins.artstation.com",
   resumeFile: "PaulAtkinsResume.pdf"
 };
 
