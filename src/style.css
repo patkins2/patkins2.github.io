@@ -197,7 +197,7 @@ html {
 }
 
 .experience-chevron {
-    width: 200px;
+    width: 14px;
     color: var(--brand);
     transition: transform 0.3s ease;
 }
