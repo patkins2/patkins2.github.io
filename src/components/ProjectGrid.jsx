@@ -17,19 +17,21 @@ function ProjectGrid({ projects }) {
 
   return (
     <>
-      <section id="projects">
-        <h2>Projects</h2>
+      <section id="projects" className="section-card projects-section">
+        <div className="section-heading">
+          <h2>Projects</h2>
+          <p>Selected work across software, data, and immersive experiences.</p>
+        </div>
         <div className="project-grid">
           {projects.map((project) => (
-            <section key={project.id} className="section3">
-              <article className="section2Content">
-                <h3 className="sectionContentSubTitle">{project.title}</h3>
+            <article key={project.id} className="project-card">
+              <h3 className="project-title">{project.title}</h3>
+              <div className="project-media">
                 
                 {/* Video embed */}
                 {project.type === 'video' && (
                   <iframe 
-                    width="420" 
-                    height="315" 
+                    className="project-frame"
                     src={project.videoUrl}
                     title={project.title}
                     frameBorder="0"
@@ -43,9 +45,8 @@ function ProjectGrid({ projects }) {
                   <img 
                     src={project.thumbnailImage} 
                     onClick={() => openLightbox(project.images)}
-                    className="hover-shadow project-thumbnail"
+                    className="project-thumbnail"
                     alt={project.title}
-                    style={{ cursor: 'pointer' }}
                   />
                 )}
 
@@ -68,8 +69,8 @@ function ProjectGrid({ projects }) {
                     alt={project.title}
                   />
                 )}
-              </article>
-            </section>
+              </div>
+            </article>
           ))}
         </div>
       </section>

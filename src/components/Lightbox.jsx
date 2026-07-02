@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Lightbox({ images, isOpen, onClose }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    if (isOpen) {
+      setCurrentSlide(0);
+    }
+  }, [images, isOpen]);
 
   if (!isOpen) return null;
 
@@ -18,8 +24,8 @@ function Lightbox({ images, isOpen, onClose }) {
   };
 
   return (
-    <div id="myModal" className="modal" style={{ display: 'block' }}>
-      <span className="close cursor" onClick={onClose}>&times;</span>
+    <div id="myModal" className="modal" role="dialog" aria-modal="true" style={{ display: 'block' }}>
+      <button type="button" className="close cursor" onClick={onClose} aria-label="Close lightbox">&times;</button>
       <div className="modal-content">
         {/* Main Image Slides */}
         {images.map((image, index) => (
@@ -29,13 +35,13 @@ function Lightbox({ images, isOpen, onClose }) {
             style={{ display: index === currentSlide ? 'block' : 'none' }}
           >
             <div className="numbertext">{index + 1} / {images.length}</div>
-            <img src={image.src} style={{ width: '100%' }} alt={image.alt} />
+            <img src={image.src} className="lightbox-main-image" alt={image.alt} />
           </div>
         ))}
 
         {/* Next/Previous controls */}
-        <a className="prev" onClick={prevSlide}>&#10094;</a>
-        <a className="next" onClick={nextSlide}>&#10095;</a>
+        <button type="button" className="prev" onClick={prevSlide} aria-label="Previous image">&#10094;</button>
+        <button type="button" className="next" onClick={nextSlide} aria-label="Next image">&#10095;</button>
 
         {/* Caption text */}
         <div className="caption-container">
@@ -43,17 +49,15 @@ function Lightbox({ images, isOpen, onClose }) {
         </div>
 
         {/* Thumbnail controls */}
-        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        <div className="thumbnail-row">
           {images.map((image, index) => (
-            <div key={index} className="column" style={{ display: 'inline-block' }}>
+            <button key={index} type="button" className="column" onClick={() => goToSlide(index)} aria-label={`Go to image ${index + 1}`}>
               <img
                 className={`demo ${index === currentSlide ? 'active' : ''}`}
                 src={image.src}
-                onClick={() => goToSlide(index)}
                 alt={image.alt}
-                style={{ width: '100%', cursor: 'pointer' }}
               />
-            </div>
+            </button>
           ))}
         </div>
       </div>
