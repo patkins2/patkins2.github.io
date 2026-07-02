@@ -1,394 +1,414 @@
-/* style.css */
-
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .App {
-    width: 100%;
-    max-width: 1400px;
+    width: min(1180px, calc(100% - 2.5rem));
     margin: 0 auto;
+    padding: 2rem 0 4rem;
 }
 
-header {
-    background-color: #894fab;
-    color: white;
-    text-align: center;
-    padding: 1em;
-    font-size: 28px;
-    font-weight: bold;
-    font-family: 'Arial', sans-serif;
-    width: 100vw;
+.hero {
     position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    padding: 4.5rem 2rem;
+    margin-bottom: 1.5rem;
+    background: #5f4b79;
+    color: #f4f8fc;
+    box-shadow: var(--shadow-soft);
 }
 
-section {
-    padding: 20px;
-    margin: 20px auto;
-    background-color: #fff;
-    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
-    border-radius: 5px;
-    max-width: 1360px;
-    width: calc(100% - 40px);
+.hero-inner {
+    position: relative;
+    max-width: 700px;
+    z-index: 1;
 }
 
-h1{
-	text-decoration: none;
+.hero-kicker {
+    font-size: 0.84rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(244, 248, 252, 0.8);
+    margin-bottom: 0.9rem;
 }
 
-h2, h3 {
-    color: #333;
-    text-decoration: underline;
+.hero h1 {
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+    margin-bottom: 0.65rem;
+    color: #f4f8fc;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.hero-title {
+    font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+    color: rgba(244, 248, 252, 0.85);
+    margin-bottom: 1.8rem;
 }
 
-li {
-    margin-bottom: 8px; /* Adjusted margin for consistency */
-}
-
-a {
-    color: #007BFF;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #0056b3;
-}
-
-/* Add a subtle hover effect for sections 
-section:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}*/
-
-/* Make project images and videos consistent size */
-.section3 iframe {
-    width: 420px;
-    height: 315px;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-    border: 1px solid #eee; /* Subtle border */
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-}
-
-.section3 img:not(.project-thumbnail) {
-    width: 420px;
-    height: 315px;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-    object-fit: cover;
-    border: 1px solid #eee; /* Subtle border */
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-}
-
-.section3 iframe:hover, .section3 img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-/* Project container styling */
-.section2Content {
-    display: flex;
-    flex-direction: column;
+.hero-cta {
+    display: inline-flex;
     align-items: center;
-    width: 100%; /* Ensure full width */
+    justify-content: center;
+    padding: 0.75rem 1.2rem;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #3e3250;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.section3 {
-    width: 100%;
+.hero-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(34, 26, 45, 0.2);
+}
+
+.section-card {
+    margin-top: 1.25rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.25rem, 2vw, 2rem);
+    box-shadow: var(--shadow-soft);
+}
+
+.section-heading {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: end;
+    gap: 0.6rem 1rem;
+    margin-bottom: 1.15rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-heading h2 {
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    color: var(--text-primary);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.profile-wrap {
     display: flex;
     justify-content: center;
-    padding: 10px; /* Add padding to increase spacing */
 }
 
-/* Add responsive styling for lightbox images */
-.mySlides img {
-    width: 100%;
-    height: auto;
-    max-height: 70vh; /* Limit height on larger screens */
-    object-fit: contain;
-}
-
-/* Media query for responsiveness */
-@media (max-width: 1399px) {
-    /* 3 columns down to 2 columns when width is less than 1400px */
-    .project-grid {
-        grid-template-columns: repeat(2, 420px);
-        max-width: 940px; /* Adjust max width for 2 columns (420px * 2) + gap (50px) */
-    }
-}
-
-@media (max-width: 939px) {
-    /* 2 columns down to 1 column when width is less than 940px */
-    .project-grid {
-        grid-template-columns: repeat(1, 420px);
-        max-width: 420px; /* Just enough for one column */
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        font-size: 1.5em;
-    }
-
-    /* For very small screens, allow the projects to scale down slightly but maintain aspect ratio */
-    .section3 {
-        width: 100%;
-        max-width: 420px;
-    }
-    
-    .section3 iframe, .section3 img {
-        width: 100%;
-        height: auto;
-        min-height: 240px; /* Maintain some minimum height */
-    }
-    
-    /* Improve lightbox responsiveness on mobile */
-    #myModal {
-        padding-top: 20px;
-    }
-    
-    .modal-content {
-        width: 95%;
-    }
-    
-    .column {
-        width: 33.33%; /* Make thumbnails larger on mobile */
-    }
-    
-    .prev, .next {
-        padding: 8px;
-        font-size: 16px;
-    }
-    
-    .close {
-        top: 10px;
-        right: 10px;
-    }
-}
-
-/* Styles for the lightbox overlay */
-#myModal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-/* Styles for the lightbox content */
-.modal-content {
-    position: relative;
-    margin: auto;
-    display: block;
-    width: 90%;
-    max-width: 900px;
-    color: white; /* Set text color to white */
-}
-
-/* Styles for the close button within the lightbox content */
-.close {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 2;
-}
-
-/* Thumbnail image controls */
-.column {
-    width: 20%; /* Adjust the width as needed */
-    float: left;
-    box-sizing: border-box;
-    padding: 0 10px;
-    margin-bottom: 15px;
-}
-
-/* Ensure the columns don't exceed one row */
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* Style for the thumbnails */
-.demo {
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-    cursor: pointer;
-}
-
-.demo.active, .demo:hover {
-    opacity: 1;
-}
-
-/* Styles for the text in the lightbox */
-.numbertext, .caption-container {
-    color: white; /* Set text color to white */
-    text-align: center; /* Center the text */
-    padding: 10px 0;
-    background-color: rgba(0,0,0,0.6);
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-/* Section thumbnails */
-.project-thumbnail {
-    width: 420px;
-    height: 315px;
+.profile-photo {
+    width: 200px;
+    aspect-ratio: 1;
+    border-radius: 50%;
     object-fit: cover;
-    cursor: pointer;
-    border: 1px solid #eee; /* Subtle border */
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border: 6px solid #ffffff;
+    box-shadow: 0 15px 26px rgba(65, 47, 90, 0.2);
+    transition: transform 0.22s ease;
 }
 
-/* Make sure all section content is properly sized */
-.sectionContentSubTitle {
+.profile-photo:hover {
+    transform: translateY(-2px);
+}
+
+.about-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.about-copy h3 {
+    margin-top: 0.35rem;
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 0.3rem;
+}
+
+.social-links a {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-surface-soft);
+    border: 1px solid var(--border-subtle);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-1px);
+    border-color: #c9bcd8;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+}
+
+.experience-list,
+.skill-list,
+.education-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.85rem;
+}
+
+.experience-item,
+.education-item,
+.skill-item {
+    background: var(--bg-surface-soft);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 0.95rem 1rem;
+}
+
+.experience-toggle {
     width: 100%;
-    text-align: center;
-    margin-bottom: 20px; /* Increased margin */
-    min-height: 50px; /* Ensure consistent height for titles */
-}
-
-/* Additional styles for the 'About' section */
-#about {
-    text-align: center;
-    margin-bottom: 20px; /* Add margin to separate from other sections */
-}
-/* Styles for the next and previous controls */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: left;
+    border: none;
+    padding: 0;
+    background: transparent;
+    color: var(--text-primary);
+    font: inherit;
+    font-weight: 700;
     cursor: pointer;
-    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
 }
 
-/* Style for the previous control */
-.prev {
-    left: 0;
+.experience-chevron {
+    width: 14px;
+    color: var(--brand);
 }
 
-/* Style for the next control */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+.experience-meta {
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+    font-size: 0.94rem;
 }
 
-/* Hover effect for prev and next buttons */
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+.bullet-list {
+    margin: 0.8rem 0 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.45rem;
+    color: var(--text-secondary);
 }
+
+.projects-section .section-heading p {
+    font-size: 0.96rem;
+}
+
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 420px); /* Exactly 3 columns of 420px each */
-    justify-content: center; /* Center the grid in the container */
-    gap: 50px; /* Increased space between project items */
-    margin: 0 auto; /* Center the grid container itself */
-    max-width: 1410px; /* Maximum width to accommodate 3 columns (420px * 3) + gaps (50px * 2) */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
 }
 
-.section3 {
-    width: 420px; /* Fixed width */
-    margin-bottom: 40px; /* Increased bottom margin */
-}
-/* Add this CSS for the animation */
-.wiggle:hover {
-    animation: wiggleAnimation 0.5s ease-in-out infinite;
+.project-card {
+    background: var(--bg-surface-soft);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 0.95rem;
 }
 
-@keyframes wiggleAnimation {
-    0%, 100% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(5deg);
-    }
-    50% {
-        transform: rotate(-5deg);
-    }
-    75% {
-        transform: rotate(5deg);
-    }
+.project-title {
+    min-height: 3.2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
 }
+
+.project-media {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #d8cfdf;
+    background: #ebe6f1;
+}
+
+.project-thumbnail,
+.project-frame {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.project-thumbnail {
+    cursor: pointer;
+    transition: transform 0.22s ease;
+}
+
+.project-thumbnail:hover {
+    transform: scale(1.015);
+}
+
+#myModal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background-color: rgba(24, 18, 32, 0.88);
+    padding: 2rem 0.75rem;
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto;
+    border-radius: 16px;
+    padding: 1rem;
+    background: #181322;
+    border: 1px solid #392d4e;
+}
+
+.close {
+    position: fixed;
+    top: 14px;
+    right: 18px;
+    border: none;
+    background: rgba(255, 255, 255, 0.12);
+    color: #eaf0f7;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.55rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.mySlides {
+    text-align: center;
+}
+
+.lightbox-main-image {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.numbertext,
+.caption-container {
+    margin-top: 0.45rem;
+    color: #ece3f6;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(236, 227, 246, 0.28);
+    background: rgba(31, 24, 43, 0.75);
+    color: #f1e8fa;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.prev {
+    left: 1rem;
+}
+
+.next {
+    right: 1rem;
+}
+
+.thumbnail-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+    gap: 0.6rem;
+    margin-top: 0.9rem;
+}
+
+.column {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.demo {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    opacity: 0.75;
+}
+
+.demo.active,
+.demo:hover {
+    opacity: 1;
+    border-color: #af98c9;
+}
+
 .tooltip {
     position: relative;
-    display: inline-block;
 }
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 160px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -80px;
     opacity: 0;
-    transition: opacity 0.3s;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+    background: #2f2740;
+    color: #f0f6fc;
+    padding: 0.35rem 0.55rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    font-size: 0.82rem;
+    transition: opacity 0.18s ease;
 }
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
 }
-.tooltip a {
-    cursor: pointer;
-}
-.cta-arrow {
-    position: absolute;
-    top: 50%;
-    left: -20px; /* Adjust the distance from the left of the headshot */
-    transform: translateY(-50%) rotate(180deg);
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 15px solid #007BFF; /* Arrow color */
-    cursor: pointer;
-	animation: moveArrow 1s infinite alternate;
-}
-@keyframes moveArrow {
-	from {
-        left: -40px;
+
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
     }
-    to {
-        left: -20px; /* Adjust the distance for the alternate position */
+
+    .profile-wrap {
+        justify-content: start;
+    }
+}
+
+@media (max-width: 680px) {
+    .App {
+        width: calc(100% - 1.4rem);
+        padding-top: 1rem;
+    }
+
+    .hero {
+        padding: 3rem 1.2rem;
+    }
+
+    .section-card {
+        padding: 1rem;
+    }
+
+    .project-title {
+        min-height: 0;
+    }
+
+    .prev,
+    .next {
+        width: 36px;
+        height: 36px;
     }
 }

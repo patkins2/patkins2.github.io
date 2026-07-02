@@ -2,13 +2,15 @@ import React from 'react';
 
 function Education({ education }) {
   return (
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
+    <section id="education" className="section-card">
+      <div className="section-heading">
+        <h2>Education</h2>
+      </div>
+      <ul className="education-list">
         {education.map((edu) => (
-          <li key={edu.id}>
+          <li key={edu.id} className="education-item">
             <h3>{edu.degree}</h3>
-            <p>{edu.school} - {edu.location} | {edu.dates}</p>
+            <p>{edu.school} | {edu.location} | {edu.dates}</p>
             {edu.minors && <p>Minors: {edu.minors}</p>}
             <p>GPA: {edu.gpa}</p>
           </li>

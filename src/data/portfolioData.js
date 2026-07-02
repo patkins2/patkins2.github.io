@@ -84,19 +84,28 @@ export const workExperience = [
 ];
 
 export const skills = [
-  "Programming Languages: Java, Python, C#, C++, SQL, HTML/CSS",
-  "Tools: Azure, Git/GitHub, Adobe Suite, MS Office, Unity, Unreal"
+  "Programming Languages: Python, Java, C#, HTML/CSS, C++, JavaScript",
+  "Data Engineering & Analytics: SQL, MongoDB, Hadoop, Hive, Palantir Foundry, Power BI",
+  "Development Tools & Platforms: Azure, Node.js, Git, JIRA",
+  "Creative Tools: Unity Engine, Unreal Engine, Adobe Creative Suite, Microsoft Office"
 ];
 
 export const projects = [
   {
     id: 1,
+    title: "TrackLab - Real-Time Race Tracking and Strategy Web Application",
+    type: "image",
+    image: "images/tracklab.png",
+    link: "https://tracklabracing.com"
+  },
+  {
+    id: 2,
     title: "Virtual Reality Team Tracker. Made for UNCC VisLab.",
     type: "video",
     videoUrl: "https://www.youtube.com/embed/Ij16HLPgvjE"
   },
   {
-    id: 2,
+    id: 3,
     title: "Augmented Reality CPR Guide/Trainer for Microsoft Hololens. Made for UNCC VisLab.",
     type: "lightbox",
     thumbnailImage: "images/screenshot5.png",
@@ -109,13 +118,13 @@ export const projects = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     title: "Unity VR Solar System. Made for ITCS 6125 - Virtual & Augmented Reality. ",
     type: "video",
     videoUrl: "https://www.youtube.com/embed/Sky0Cmaqzcg"
   },
   {
-    id: 4,
+    id: 5,
     title: "Text-Based Adventure Game Made In Unity.",
     type: "image",
     image: "images/text_based.png",
