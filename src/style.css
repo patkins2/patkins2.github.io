@@ -4,6 +4,10 @@
     padding: 2rem 0 4rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .hero {
     position: relative;
     overflow: hidden;
@@ -168,6 +172,15 @@
     padding: 0.95rem 1rem;
 }
 
+.experience-item {
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.experience-item.is-open {
+    border-color: #cbbede;
+    box-shadow: 0 8px 18px rgba(49, 36, 67, 0.1);
+}
+
 .experience-toggle {
     width: 100%;
     display: flex;
@@ -184,14 +197,34 @@
 }
 
 .experience-chevron {
-    width: 14px;
+    width: 200px;
     color: var(--brand);
+    transition: transform 0.3s ease;
+}
+
+.experience-item.is-open .experience-chevron {
+    transform: rotate(90deg);
 }
 
 .experience-meta {
     margin-top: 0.4rem;
     margin-bottom: 0;
     font-size: 0.94rem;
+}
+
+.experience-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-4px);
+    transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease, margin-top 0.25s ease;
+}
+
+.experience-item.is-open .experience-details {
+    max-height: 460px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 0.3rem;
 }
 
 .bullet-list {
@@ -204,6 +237,10 @@
 
 .projects-section .section-heading p {
     font-size: 0.96rem;
+}
+
+#projects {
+    scroll-margin-top: 1rem;
 }
 
 .project-grid {
@@ -385,6 +422,20 @@
 
     .profile-wrap {
         justify-content: start;
+    }
+}
+
+@media (hover: none) {
+    .experience-details {
+        max-height: none;
+        opacity: 1;
+        overflow: visible;
+        transform: none;
+        margin-top: 0.3rem;
+    }
+
+    .experience-chevron {
+        transform: rotate(90deg);
     }
 }
 

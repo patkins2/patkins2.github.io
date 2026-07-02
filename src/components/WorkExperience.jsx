@@ -4,9 +4,9 @@ function WorkExperience({ experiences }) {
   const [expandedJobs, setExpandedJobs] = useState({});
 
   const toggleJob = (jobId) => {
-    setExpandedJobs(prev => ({
+    setExpandedJobs((prev) => ({
       ...prev,
-      [jobId]: !prev[jobId]
+      [jobId]: !prev[jobId],
     }));
   };
 
@@ -17,18 +17,18 @@ function WorkExperience({ experiences }) {
       </div>
       <ul className="experience-list">
         {experiences.map((job) => (
-          <li key={job.id} className="experience-item">
+          <li key={job.id} className={`experience-item ${expandedJobs[job.id] ? 'is-open' : ''}`}>
             <button
               type="button"
-              onClick={() => toggleJob(job.id)}
               className="experience-toggle"
+              onClick={() => toggleJob(job.id)}
               aria-expanded={Boolean(expandedJobs[job.id])}
             >
-              <span className="experience-chevron" aria-hidden="true">{expandedJobs[job.id] ? '▼' : '▶'}</span>
+              <span className="experience-chevron">▸</span>
               <span>{job.title}</span>
             </button>
             <p className="experience-meta">{job.company} | {job.location} | {job.dates}</p>
-            {expandedJobs[job.id] && (
+            <div className="experience-details">
               <ul className="bullet-list">
                 {Array.isArray(job.description) ? (
                   job.description.map((item, index) => (
@@ -38,7 +38,7 @@ function WorkExperience({ experiences }) {
                   <li>{job.description}</li>
                 )}
               </ul>
-            )}
+            </div>
           </li>
         ))}
       </ul>
